@@ -9,13 +9,8 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
-
-    // Инициализация объекта класса Cat
+    // Создание объекта класса Cat
     Cat murzik = new Cat("Мурзик", 9, Color.YELLOW);
-
-    // Инициализация объектов
-    //    GsonBuilder builder = new GsonBuilder();
-    //    Gson gson = builder.create();
     Gson gson = new Gson();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         String jsonMurzik = gson.toJson(murzik);
         // Из json в объект класса Cat
         Cat objectMurzik = gson.fromJson(jsonMurzik, Cat.class);
-        String textMurzik = String.format("Имя - %s, возраст - %d.",
+        String textMurzik = String.format(
+                "Имя - %s, возраст - %d.",
                 objectMurzik.name,
                 objectMurzik.age
         );
