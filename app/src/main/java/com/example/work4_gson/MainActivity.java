@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Получение элемента по id
         TextView text_from_json = (TextView) findViewById(R.id.text_from_json);
+        TextView tv_color = (TextView) findViewById(R.id.tv_color);
         // Из объекта в строку json
         String jsonMurzik = gson.toJson(murzik);
         // Из json в объект класса Cat
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 objectMurzik.age
         );
         text_from_json.setText(textMurzik);
-
+        // Цвет блока
+        tv_color.setBackgroundColor(objectMurzik.color);
     }
 }
